@@ -1,0 +1,7 @@
+.ui-container {
+    margin: 20px auto;
+    max-width: 900px;
+    min-width: 600px;
+    min-height: 100px;
+    background-color: aquamarine;
+}
