@@ -6,5 +6,8 @@ Singletone = (function() {
         return inst;
     }
 })();
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
