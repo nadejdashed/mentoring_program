@@ -7,4 +7,3 @@ Singletone = (function() {
     }
 })();
 
-
