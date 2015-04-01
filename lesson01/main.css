@@ -1,7 +1,29 @@
+.h1 {
+    margin: 10px;
+    text-align: center;
+    font: 36px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    color: #666;
+}
 .ui-container {
     margin: 20px auto;
+    padding: 25px;
     max-width: 900px;
     min-width: 600px;
     min-height: 100px;
     background-color: aquamarine;
+}
+.ui-item {
+    margin-bottom: 20px;
+}
+
+:focus {
+    outline: none;
+}
+.ui-input,
+.ui-select {
+    width: 200px;
+    height: 30px;
+    border: 2px solid #999;
+    border-radius: 3px;
+    outline: none;
 }

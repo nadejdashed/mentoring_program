@@ -7,9 +7,10 @@
 //    }
 //})();
 
-var UI = function(type) {
-    UI.constructor[type].prototype = this;
-    var widget = new UI.constructor[type];
+// Factory
+
+var UI = function(type, options) {
+    var widget = new UI.constructor[type](options);
 
     UI.initWidget(widget);
 
@@ -17,13 +18,24 @@ var UI = function(type) {
 }
 
 UI.initWidget = function(widget) {
-    var container = document.getElementById('ui-container');
-    container.appendChild(widget.elem);
+    var container = document.getElementById('ui-container'),
+        item = document.createElement('div');
+    item.className = 'ui-item';
+
+    item.appendChild(widget.elem);
+    container.appendChild(item);
 }
 
 UI.constructor = {
-    'input' : InputWidget
+    'input' : InputWidget,
+    'select' : SelectWidget
 }
 
+
+// Add widgets
+
 var input = new UI('input');
+var input = new UI('select', {
+    items: ['Option1', 'Option2', 'Option3']
+});
 
