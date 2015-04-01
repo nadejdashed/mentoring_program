@@ -6,4 +6,3 @@ Singletone = (function() {
         return inst;
     }
 })();
-
