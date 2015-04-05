@@ -1,20 +1,19 @@
-var SelectWidget = function (options) {
+var SelectWidget = function () {};
 
-    var items = (options && options.items) || [];
+var OptionWidget = function () {};
+OptionWidget.prototype.init = function(){
+	this.uber.init.apply(this);
+	if (this.options){	
+		name = this.options.name;
+		this.elem.innerHTML = name;
+		this.elem.value = name;
+	}
+}
 
-    this.elem = document.createElement('div');
-    this.elem.className = 'ui-select-widget';
-    this.elem.innerHTML = '<select class=\"ui-select\"></select>';
+UI.add('select', SelectWidget);
+UI.add('option', OptionWidget);
 
-    this.addOptions(items);
-};
-
-SelectWidget.prototype.addOptions = function(items) {
-    var select = this.elem.querySelector('select');
-    for (var i=0; i<items.length; i++) {
-        var option = document.createElement('option');
-        option.innerHTML = items[i];
-        option.value = items[i];
-        select.appendChild(option);
-    }
-};
+var select = UI.create('select');
+UI.create('option', {parent: select, name: 'Option 1'});
+UI.create('option', {parent: select});
+UI.create('option', {parent: select, name: 'Option 3'});
